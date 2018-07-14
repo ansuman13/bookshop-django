@@ -1,0 +1,12 @@
+
+{% extends 'base.html' %}
+{% block body_block %}
+{% for book in bookmodel_list %}
+		<div class="bookselector" >
+		 <li>{{book.title}}
+			<a href="{% url 'book:book_update' pk=book.pk %}">:update </a>
+			<a href="{% url 'book:book_details' pk=book.pk %}">:details</a>
+		</a></li>
+		</div>
+	{% endfor %}
+{% endblock %}

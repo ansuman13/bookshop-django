@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block body_block %}
+	<ol>
+	{% for book in visionbooksmodel_list %}
+		
+			<li>{{ book.Title  }}-{{ book.Author }}-{{book.Price}}</li>
+		
+	{% endfor %}
+	<ol>
+{%endblock%}

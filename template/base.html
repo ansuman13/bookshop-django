@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'custom.css' %}" >
+</head>
+<body>
+	<!-- <nav class="navbar bg-light navbar-light">
+		<div class="nav-navbar">
+			<ul class="nav">
+				<li class="nav-item"><a class="nav-link" href="{% url 'book:index'%}">LIST</a></li>
+				<li class="nav-item"><a class="nav-link" href="{% url 'book:get_name'%}">ADD</a></li>
+			</ul>
+			<ul class="navbar-right">
+				{% if user.is_authenticeted %}
+					<li><a href="{% url 'accounts:logout' %}">logout</a></li>
+				{% else %}
+					<li><a href="{% url 'accounts:login' %}">login</a></li>
+					<li><a href="{% url 'accounts:signup' %}">Sign-Up</a></li>
+				{% endif %}
+			</ul>
+		</div>
+	</nav> -->
+	<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+  <a class="navbar-brand" href="{% url 'book:index' %}">Vision Books</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a class="nav-link" href="{% url 'book:get_name'%}">ADD</a><span class="sr-only">(current)</span></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'admin:index' %}">Admin</a><span class="sr-only">(current)</span></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'book:view_cart' %}">Cart</a><span class="sr-only">(current)</span></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'book:order' %}">Order</a><span class="sr-only">(current)</span></li>
+    </ul>
+      <ul class="navbar-nav navbar-right">
+       <form  method="get" action="/search/" class="navbar-search pull-left">
+       <input name="q" type="text" class="search-query" placeholder="Search">
+      </form>
+      {% if user.is_authenticated %}
+      <li class="nav-item navbar-right">
+        <a class="nav-link" href="{% url 'accounts:logout'%}">Logout {{ user.username }}</a>
+      </li>
+     {% else %}
+     <li class="nav-item">
+        <a class="nav-link" href="{% url 'accounts:login'%}">Login</a>
+      </li>
+     <ul class="navbar-nav navbar-right">
+      <li class="nav-item navbar-right">
+        <a class="nav-link" href="{% url 'accounts:signup'%}">Sign-Up</a>
+      </li>
+      {% endif %}
+  	</ul>
+      
+    </ul>
+  </div>
+</nav>
+</body>
+<div class="container jumbotron">
+	{% block body_block %}
+	{% endblock %}
+</div>
+</html>

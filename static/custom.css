@@ -1,0 +1,18 @@
+.container1 {
+    position: relative;
+    width: 300px;
+}
+/*.img1 {
+    width: 300px;
+    height: 300px;
+}*/
+.top_right {
+    position: absolute;
+    right: 0px;
+    top: 8px;
+}
+.top_left {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}

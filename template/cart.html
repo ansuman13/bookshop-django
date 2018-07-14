@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+    <table border="2">
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+        </tr>
+        {% for item in cart %}
+        <tr>
+            <td>{{ item }}</td>
+            <td>{{ item.product.title }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.total_price }}</td>
+           <!--  <td><FORM METHOD="POST" ACTION="http://ww9.aitsafe.com/cf/add.cfm">
+            <INPUT TYPE="HIDDEN" NAME="userid" VALUE="B7197157">
+            <INPUT TYPE="HIDDEN" NAME="product" VALUE={{ item.product.title }}>
+            <INPUT TYPE="HIDDEN" NAME="price" 
+            VALUE={{ item.total_price }}>
+            <INPUT TYPE="SUBMIT" VALUE="BUY NOW!">
+            </FORM>
+            </td>
+         --></tr>
+        {% endfor %}
+    </table>
+{% endblock %}

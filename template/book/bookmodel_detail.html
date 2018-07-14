@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block body_block %}
+	<table border="2" align="center">
+	<tr>
+	<td><img src="{{ bookmodel.thumbnail }}" alt="No Image availabe" height = '200' widht= '200'></br></td>
+	<td><h1>{{ bookmodel.title }}</br></h1>
+	Author: {{ bookmodel.authors }}</br>
+	Price : {{ bookmodel.prices }}</br>
+	ISBN: {{ bookmodel.isbn }}</br>
+	Publisher: {{ bookmodel.publisher }}</br>
+	Year: {{ bookmodel.year }}</br>
+	Subject: {{ bookmodel.subject }}</br><hr>
+	<b>Description:</b> {{ bookmodel.desc }}</br></td>
+	</tr>
+	<tr>
+		<td>
+		</td><td>
+			<a href="{% url 'book:add_to_cart' isbn=bookmodel.isbn %}"><span class="btn btn-danger">Add to Cart</span></a>
+		</td>
+	</tr>
+	</table>
+	
+	
+	
+{% endblock %}

@@ -1,0 +1,9 @@
+# bookshop-django
+
+django==1.11
+pillow
+django-haystack
+haystack
+whoosh
+isbnlib
+django-cart

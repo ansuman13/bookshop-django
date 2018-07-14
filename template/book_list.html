@@ -1,0 +1,5 @@
+{%extends 'base.html' %}
+{% block body_block %}
+	{% for book in book_list %}
+		<li>{{ book.title }}</li>
+{% endblock %}
