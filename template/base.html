@@ -5,6 +5,7 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'custom.css' %}" >
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 	<!-- <nav class="navbar bg-light navbar-light">
@@ -32,6 +33,7 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item"><a class="nav-link" href="{% url 'book:get_name'%}">ADD</a><span class="sr-only">(current)</span></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'book:all'%}">ALL</a><span class="sr-only">(current)</span></li>
       <li class="nav-item"><a class="nav-link" href="{% url 'admin:index' %}">Admin</a><span class="sr-only">(current)</span></li>
       <li class="nav-item"><a class="nav-link" href="{% url 'book:view_cart' %}">Cart</a><span class="sr-only">(current)</span></li>
       <li class="nav-item"><a class="nav-link" href="{% url 'book:order' %}">Order</a><span class="sr-only">(current)</span></li>

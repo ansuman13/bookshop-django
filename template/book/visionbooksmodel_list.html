@@ -3,9 +3,13 @@
 {% block body_block %}
 	<ol>
 	{% for book in visionbooksmodel_list %}
-		
-			<li>{{ book.Title  }}-{{ book.Author }}-{{book.Price}}</li>
-		
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src='{{book.image}}' alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ book.Title  }}</h5>
+    <p class="card-text">{{ book.Author }}-{{book.Price}}</p>
+  </div>
+</div>
 	{% endfor %}
 	<ol>
 {%endblock%}

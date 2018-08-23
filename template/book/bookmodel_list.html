@@ -1,12 +1,35 @@
 
 {% extends 'base.html' %}
 {% block body_block %}
+
 {% for book in bookmodel_list %}
-		<div class="bookselector" >
-		 <li>{{book.title}}
-			<a href="{% url 'book:book_update' pk=book.pk %}">:update </a>
+		<div class="card" style="width: 20rem; text-align:center;display:inline-block;">
+	<!--   <img class="card-img-top" src='{{book.thumbnail}}' alt="Card image cap" height="400px" width="1000px"> -->
+  <div class="card-body">
+    <h5 class="card-title">{{ book.title }}</h5>
+    <p class="card-text">{{ book.authors }}-{{book.prices}}</p>
+ 	<a href="{% url 'book:book_update' pk=book.pk %}">:update </a>
 			<a href="{% url 'book:book_details' pk=book.pk %}">:details</a>
-		</a></li>
-		</div>
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+    $(".card").mouseover(function(){
+        $(".card-title").animate({
+            left: '250px',
+            opacity: '0.5',
+            height: '150px',
+            width: '150px'
+        });
+    });
+});
+    });
+    $(".card").mouseout(function(){
+        $(".card").css("background-color", "lightgray");
+    });
+});
+</script>
+		
+		
 	{% endfor %}
 {% endblock %}
