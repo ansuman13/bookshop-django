@@ -3,7 +3,7 @@ bs4==0.0.1
 certifi==2018.4.16
 chardet==3.0.4
 construct==2.5.3
-Django==2.0.6
+Django==2.2.10
 django-cart==1.0.4
 django-csvimport==2.11
 django-haystack==2.8.1
