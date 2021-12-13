@@ -10,7 +10,7 @@ django-haystack==2.8.1
 future==0.16.0
 idna==2.7
 isbnlib==3.8.4
-lxml==4.2.2
+lxml==4.6.5
 pefile==2017.11.5
 Pillow==5.1.0
 python-ptrace==0.9.3
